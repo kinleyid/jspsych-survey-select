@@ -35,6 +35,12 @@ jsPsych.plugins['survey-select'] = (function() {
             default: [],
             description: 'List of drop-down menu options'
           },
+          randomize_option_order: {
+            type: jsPsych.plugins.parameterType.BOOL,
+            pretty_name: 'Randomize option order',
+            default: false,
+            description: 'Randomize the order of the options'
+          },
           name: {
             type: jsPsych.plugins.parameterType.STRING,
             pretty_name: 'Question Name',
@@ -96,6 +102,9 @@ jsPsych.plugins['survey-select'] = (function() {
         '" data-name="' + question.name + '" ' + autofocus + ' ' + req + '>';
       if (question.placeholder) {
         html += '<option value="placeholder">' + question.placeholder + '</option>';
+      }
+      if (question.randomize_option_order) {
+        question.options = jsPsych.randomization.shuffle(question.options);
       }
       for (var j = 0; j < question.options.length; j++) {
         html += '<option value="' + question.options[j] +'">' + question.options[j] + '</option>';
