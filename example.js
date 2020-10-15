@@ -4,15 +4,15 @@ var car_q = {
     preamble: 'Make some choices',
     questions: [
     	{
-    		prompt: 'Select a car:',
+            prompt: 'Select a car:',
             name: 'car',
-    		placeholder: '--select--',
-    		options: ['Volvo', 'Saab', 'Mercedes', 'Audi'],
+            placeholder: '--select--',
+            options: ['Volvo', 'Saab', 'Mercedes', 'Audi'],
             randomize_option_order: true
     	},
     	{
-    		prompt: 'Select a fruit:',
-    		options: ['Apply', 'Orange', 'Banana'],
+            prompt: 'Select a fruit:',
+            options: ['Apply', 'Orange', 'Banana'],
     	},
     ]
 };
